@@ -52,7 +52,7 @@ const questions = [
     }
 },
 
-// Collect usage information
+// use information
 {
     type: 'input',
     name: 'usage',
@@ -67,7 +67,7 @@ const questions = [
     }
 },
 
-// Collect license information
+// license information
 {
     type: 'list',
     name: 'license',
@@ -75,7 +75,7 @@ const questions = [
     choices: ['None', 'MIT', 'ISC', 'Apache', 'GNU GPLv3', 'BSD',]
 },
 
-// Collect contributing information
+// information contribution
 {
     type: 'input',
     name: 'contributing',
@@ -90,7 +90,7 @@ const questions = [
     }
 },
 
-// Collect tests information
+// test information
 {
     type: 'input',
     name: 'tests',
@@ -105,7 +105,7 @@ const questions = [
     }
 },
 
-// Collect GitHub username
+// github username
 {
     type: 'input',
     name: 'github',
@@ -120,7 +120,7 @@ const questions = [
     }
 },
 
-// Collect email for questions/contact
+// contact information
 {
     type: 'input',
     name: 'email',
@@ -137,7 +137,7 @@ const questions = [
 ];
 
 // Function to prompt user with questions
-const promptUser = () => {
+const userPrompt = () => {
     return inquirer.prompt(questions);
 };
 
@@ -157,7 +157,7 @@ function writeToFile(data) {
 // TODO: Create a function to initialize app
 function init() {
   console.log('Welcome to README.md Doctor! Please answer the following prompts.');
-    promptUser()
+    userPrompt()
     .then(function(data) {
         return generateMarkdown(data);
     })
